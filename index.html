@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raj Sujani — Health Operations Senior Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F9F8F5;
+    --ink:#1C2B33;
+    --ink-soft:#4A5A63;
+    --teal:#2F6F6B;
+    --teal-deep:#1F4A47;
+    --slate:#3D5A73;
+    --line:#DCD8CF;
+    --card:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal-deep);}
+  .wrap{max-width:840px;margin:0 auto;padding:0 28px;}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(249,248,245,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px;}
+  .nav-name{font-family:'Fraunces',serif;font-weight:600;font-size:18px;letter-spacing:0.2px;}
+  nav .links{display:flex;gap:22px;font-size:14px;}
+  nav .links a{text-decoration:none;color:var(--ink-soft);}
+  nav .links a:hover{color:var(--teal-deep);}
+  .nav-cta{
+    font-size:13px;font-weight:600;color:#fff !important;background:var(--teal);
+    padding:8px 16px;border-radius:3px;text-decoration:none;
+  }
+
+  /* HERO */
+  header.hero{padding:64px 0 40px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;
+    color:var(--teal-deep);text-transform:uppercase;margin-bottom:18px;
+  }
+  h1{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(38px,6vw,58px);line-height:1.05;letter-spacing:-0.5px;
+    color:var(--ink);
+  }
+  h1 em{font-style:italic;color:var(--teal-deep);}
+  .role{font-size:19px;color:var(--ink-soft);margin-top:14px;max-width:560px;}
+
+  /* IMPACT STRIP — signature element */
+  .impact{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--line);border-radius:4px;overflow:hidden;
+    margin-top:44px;background:var(--card);
+  }
+  .impact div{padding:22px 18px;border-right:1px solid var(--line);}
+  .impact div:last-child{border-right:none;}
+  .impact .num{
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:26px;color:var(--teal-deep);
+    display:block;
+  }
+  .impact .lbl{font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.35;}
+
+  @media (max-width:640px){
+    .impact{grid-template-columns:repeat(2,1fr);}
+    .impact div{border-bottom:1px solid var(--line);}
+    .impact div:nth-child(2){border-right:none;}
+    .impact div:nth-child(4){border-right:none;}
+  }
+
+  /* SECTIONS */
+  section{padding:52px 0;border-top:1px solid var(--line);}
+  .sec-label{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--teal-deep);margin-bottom:20px;
+  }
+  .summary-text{font-size:17px;max-width:640px;color:var(--ink-soft);}
+
+  /* SKILLS */
+  .skill-groups{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px;}
+  .skill-group h3{font-family:'Fraunces',serif;font-weight:500;font-size:16px;margin-bottom:10px;}
+  .skill-group ul{list-style:none;}
+  .skill-group li{
+    font-size:14.5px;color:var(--ink-soft);padding:6px 0;
+    border-bottom:1px dotted var(--line);
+  }
+  @media (max-width:640px){.skill-groups{grid-template-columns:1fr;}}
+
+  /* EXPERIENCE TIMELINE */
+  .job{
+    display:grid;grid-template-columns:150px 1fr;gap:20px;
+    padding:26px 0;border-bottom:1px solid var(--line);
+  }
+  .job:last-child{border-bottom:none;}
+  .job-date{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink-soft);
+    padding-top:3px;
+  }
+  .job-title{font-family:'Fraunces',serif;font-size:19px;font-weight:500;}
+  .job-company{font-size:13.5px;color:var(--teal-deep);margin-bottom:10px;font-weight:600;}
+  .job ul{padding-left:18px;}
+  .job li{font-size:15px;color:var(--ink-soft);margin-bottom:6px;}
+  @media (max-width:640px){
+    .job{grid-template-columns:1fr;gap:6px;}
+  }
+
+  /* ACHIEVEMENTS */
+  .ach-list{display:flex;flex-direction:column;gap:14px;}
+  .ach-item{display:flex;gap:14px;align-items:flex-start;}
+  .ach-mark{
+    font-family:'IBM Plex Mono',monospace;color:var(--teal);font-weight:600;font-size:14px;
+    padding-top:2px;flex-shrink:0;
+  }
+  .ach-item p{font-size:15.5px;color:var(--ink-soft);}
+
+  /* EDUCATION */
+  .edu-item{padding:12px 0;border-bottom:1px dotted var(--line);}
+  .edu-item:last-child{border-bottom:none;}
+  .edu-degree{font-weight:600;font-size:15px;}
+  .edu-meta{font-size:13.5px;color:var(--ink-soft);}
+
+  /* FOOTER / CONTACT */
+  footer{
+    background:var(--ink);color:#EDEBE4;padding:50px 0 40px;
+  }
+  footer h2{font-family:'Fraunces',serif;font-weight:500;font-size:28px;margin-bottom:10px;}
+  footer p{color:#B9C2C6;font-size:15px;max-width:460px;}
+  .contact-row{
+    display:flex;flex-wrap:wrap;gap:16px;margin-top:26px;
+  }
+  .contact-row a{
+    color:#EDEBE4;text-decoration:none;font-size:14px;
+    border:1px solid #445059;padding:9px 16px;border-radius:3px;
+  }
+  .contact-row a:hover{border-color:var(--teal);color:var(--teal);}
+  .foot-note{margin-top:34px;font-size:12px;color:#6E7A80;}
+
+  /* fade-in on scroll */
+  .fade{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
+  .fade.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">RAJ SUJANI</div>
+    <div class="links">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a class="nav-cta" href="mailto:raj.sujani123@gmail.com">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Health Operations · Claims &amp; Quality</div>
+    <h1>Raj Sujani builds<br><em>calmer, more accurate</em><br>claims operations.</h1>
+    <p class="role">8+ years at Accenture turning claims backlogs, error rates, and escalations into measurable, steady improvement — now looking for a broader operations leadership role.</p>
+
+    <div class="impact fade">
+      <div><span class="num">15</span><span class="lbl">Analysts currently led</span></div>
+      <div><span class="num">15%</span><span class="lbl">SLA &amp; quality improvement</span></div>
+      <div><span class="num">22%</span><span class="lbl">Claims error rate reduction</span></div>
+      <div><span class="num">8</span><span class="lbl">New-hire batches trained</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="sec-label">Summary</div>
+    <p class="summary-text fade">
+      Health Operations Senior Analyst with 8+ years at Accenture, progressing from New Associate to Senior Analyst through consistent ownership and performance. Currently leads a team of 15 analysts, having improved SLA and quality metrics by 15% and reduced claims processing error rates by 22% through root cause analysis and process redesign. Subject Matter Expert (SME) for complex healthcare claims and auditing, having trained and mentored 8 batches of new hires. Experienced with claims management systems, QA frameworks, and reporting tools (Excel, Power BI).
+    </p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-label">Professional Experience</div>
+
+    <div class="job fade">
+      <div class="job-date">Dec 2025 – Present</div>
+      <div>
+        <div class="job-title">Healthcare Business Senior Analyst</div>
+        <div class="job-company">ACCENTURE PVT LTD</div>
+        <ul>
+          <li>Lead a team of 15 healthcare business analysts, overseeing daily claims operations, escalations, and performance coaching.</li>
+          <li>Improved SLA and quality metrics by 15% through process audits and targeted root cause analysis.</li>
+          <li>Serve as Subject Matter Expert (SME) for complex claims auditing, resolving escalated cases using claims management systems.</li>
+          <li>Reduced claims processing error rates by 22% by redesigning QA checkpoints and feedback loops.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job fade">
+      <div class="job-date">Mar 2023 – Nov 2025</div>
+      <div>
+        <div class="job-title">Healthcare Business Analyst</div>
+        <div class="job-company">ACCENTURE PVT LTD</div>
+        <ul>
+          <li>Trained and mentored 8 new-hire batches, accelerating time-to-productivity for new team members.</li>
+          <li>Managed business escalations end-to-end, coordinating with cross-functional teams.</li>
+          <li>Built and maintained MIS reports and dashboards in Excel and Power BI to track team productivity and quality.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job fade">
+      <div class="job-date">Mar 2021 – Feb 2023</div>
+      <div>
+        <div class="job-title">Healthcare Business Senior Associate</div>
+        <div class="job-company">ACCENTURE PVT LTD</div>
+        <ul>
+          <li>Supported claims auditing and quality assurance, ensuring adherence to SLA and compliance standards.</li>
+          <li>Coached junior associates on process best practices and claims accuracy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job fade">
+      <div class="job-date">Mar 2019 – Feb 2021</div>
+      <div>
+        <div class="job-title">Healthcare Business Associate</div>
+        <div class="job-company">ACCENTURE PVT LTD</div>
+        <ul>
+          <li>Processed and audited US healthcare claims, maintaining accuracy and productivity targets.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job fade">
+      <div class="job-date">Feb 2018 – Feb 2019</div>
+      <div>
+        <div class="job-title">Healthcare Business New Associate</div>
+        <div class="job-company">ACCENTURE PVT LTD</div>
+        <ul>
+          <li>Started career in healthcare claims processing, quickly ramping up to meet quality and productivity benchmarks.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-label">Core Skills</div>
+    <div class="skill-groups">
+      <div class="skill-group fade">
+        <h3>Operations &amp; Claims</h3>
+        <ul>
+          <li>US Healthcare Operations</li>
+          <li>Claims Processing &amp; Auditing</li>
+          <li>Claims Management Systems</li>
+          <li>Root Cause Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-group fade">
+        <h3>Leadership &amp; Quality</h3>
+        <ul>
+          <li>People Management &amp; Team Leadership</li>
+          <li>Training &amp; Coaching (SME)</li>
+          <li>Quality Assurance &amp; SLA Management</li>
+          <li>Reporting &amp; MIS · Excel · Power BI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <div class="sec-label">Key Achievements</div>
+    <div class="ach-list">
+      <div class="ach-item fade"><span class="ach-mark">01</span><p>Progressed from New Associate to Senior Analyst in 8 years — 5 promotions at the same organization.</p></div>
+      <div class="ach-item fade"><span class="ach-mark">02</span><p>Currently leads a team of 15 analysts, directly responsible for their performance and development.</p></div>
+      <div class="ach-item fade"><span class="ach-mark">03</span><p>Trained and mentored 8 new-hire batches as an internal Subject Matter Expert (SME).</p></div>
+      <div class="ach-item fade"><span class="ach-mark">04</span><p>Delivered a 15% improvement in SLA/quality metrics and a 22% reduction in claims error rates.</p></div>
+      <div class="ach-item fade"><span class="ach-mark">05</span><p>Recognized internally for handling complex business escalations across multiple stakeholder groups.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-label">Education</div>
+    <div class="edu-item fade">
+      <div class="edu-degree">Bachelor of Commerce (B.Com.)</div>
+      <div class="edu-meta">University of Mumbai · 2014 – 2017</div>
+    </div>
+    <div class="edu-item fade">
+      <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+      <div class="edu-meta">Ramanand Arya D.A.V. College · 2012 – 2014</div>
+    </div>
+    <div class="edu-item fade">
+      <div class="edu-degree">Secondary School Certificate (SSC)</div>
+      <div class="edu-meta">Sheth Shree K. B. Vira High School · 2002 – 2012</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk operations.</h2>
+    <p>Open to Health Operations and Claims Leadership roles. Reach out directly — happy to walk through any of the numbers above.</p>
+    <div class="contact-row">
+      <a href="mailto:raj.sujani123@gmail.com">raj.sujani123@gmail.com</a>
+      <a href="tel:+917977889490">+91 79778 89490</a>
+      <a href="https://www.linkedin.com/in/raj-sujani/" target="_blank" rel="noopener">linkedin.com/in/raj-sujani</a>
+    </div>
+    <div class="foot-note">Dombivli East, Mumbai, Maharashtra</div>
+  </div>
+</footer>
+
+<script>
+  const faders = document.querySelectorAll('.fade');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  faders.forEach(f=>io.observe(f));
+  // reveal hero immediately
+  window.addEventListener('load', ()=>{
+    document.querySelector('.impact').classList.add('in');
+  });
+</script>
+
+</body>
+</html>
